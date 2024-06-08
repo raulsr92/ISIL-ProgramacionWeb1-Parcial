@@ -1,0 +1,53 @@
+body{
+    background-image: url(../img/estadio1.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+h1{
+    color: white;
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 20px!important;
+}
+
+.table-container{
+    padding: 30px;
+    background-color: #c1af73;
+    opacity: 90%;
+    border-radius: 20px;
+}
+
+.table{
+    border-radius: 20px;
+    margin: 0;
+}
+.return-button{
+    background: #0F3B73;
+    border-radius: 20px;
+    border: 0;
+    font-size: 16px;
+    font-weight: 600;
+    width: 180px;
+    padding: 10px 20px;
+    font-size:25;
+    text-transform: uppercase;
+}
+
+.return-button:hover{
+    background: #807C5A;
+
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}

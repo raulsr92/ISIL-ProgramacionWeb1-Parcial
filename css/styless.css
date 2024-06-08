@@ -1,0 +1,842 @@
+/* == VARIABLES COLORES == */
+
+:root {
+	--main-color:#000D1E;
+	--secondary-color:#807C5A;
+	--tertiary-color:white;
+	--extra-color-1:#CCCFD2;
+    --extra-color-2:#EB0029;
+    --extra-color-3:#F8F9FA;
+    --extra-color-4:#3E4855;
+    --extra-color-5:#0F3B73;
+    --extra-color-6:#6A664A;
+    --extra-color-7:#CED4DA;
+    --extra-color-8:#F8F9FA;
+    --extra-color-9:#DFDED6;
+    --extra-color-10:#185FBA;
+    --extra-color-11:#0d2647;
+    --extra-color-12:#c1af73;
+}
+
+/* Importación de Tipografía de fontawesome */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*========================== Inicio Estilos universales ================= */
+
+:root{
+    font-size: 20px;
+}
+
+*{
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+	padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    position: relative;
+
+}
+
+/*========================== Fin Estilos universales ================= */
+
+/*========================== Inicio Estilos Cabecera ================= */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .075);
+}
+
+header nav{
+    padding: 0px !important;
+}
+
+header nav>div{
+    padding: 0px !important;
+}
+
+.enlace-icon-club{
+    display: flex;
+    align-items: center;
+    letter-spacing: -1px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 35px;
+    padding-right: 35px;
+    background: var(--main-color);
+    color: var(--extra-color-3);
+    margin-right: 0;
+}
+
+.enlace-icon-club span:nth-child(2){
+    font-weight: 600;
+    color: var(--extra-color-3);
+    padding-right: 5px;
+}
+
+.enlace-icon-club span:nth-child(3){
+    font-weight: 200;
+    color: var(--extra-color-3);
+}
+
+.enlace-icon-club img{
+    transition: all 300ms ease-in;
+    margin-right: 10px;
+}
+
+.enlace-icon-club img:hover{
+    transform: scale(1.2);
+}
+
+.navbar__icons-container{
+    display: flex;
+    column-gap: 35px;
+    align-items: center;
+}
+
+.navbar__icons-container>div{
+    display: flex;
+    column-gap: 20px;
+}
+
+.navbar__item{
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.navbar__item:hover{
+    color: var(--secondary-color);
+}
+
+.navbar__items-container{
+    display: flex;
+    column-gap: 12px;
+}
+
+.enlace-icon-header{
+    color: var(--extra-color-4);
+    font-size: 1.2rem;
+    transition: all 200ms ease-in-out;
+}
+
+.enlace-icon-header:hover{
+    color: var(--secondary-color);
+
+}
+/*========================== Fin Estilos Cabecera ================= */
+
+/*========================== Inicio Estilos Main ================= */
+
+.backgroundWhite{
+    background-image: url(../img/fondo.png);
+}
+
+.backgroundBlack{
+    background-image: url(../img/fondo2.jpg);
+}
+
+
+.main .carousel-item img{
+    max-height: 70vh;
+    object-fit: cover;
+}
+
+.btn-main, .suscribe-button{
+    background: var(--secondary-color)!important;
+    border-radius: 50px;
+    border: 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-main:hover{
+    background: var(--extra-color-6)!important;
+}
+
+.p-cards{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.p-cards__intimo{
+    color: var(--extra-color-2);
+}
+
+.card-container{
+    border: 0;
+}
+
+h1{
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--main-color);
+}
+
+h2{
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+.enlace-img-products img{
+    transition: all 300ms ease;
+}
+
+.enlace-img-products img:hover{
+    transform:scale(1.1);
+}
+
+.enlace-img-products{
+    overflow: hidden;
+}
+
+.publicity-section__right img{
+    width: 100%;
+}
+
+.publicity-section__left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 10px;
+    text-align: center;
+}
+
+.title-publicity{
+    font-size: 40px;
+    font-style: italic;
+}
+
+.title-publicity span{
+    color: var(--secondary-color);
+}
+
+
+/*========================== Fin Estilos Main ================= */
+
+
+
+/*========================== Inicio Estilos Footer ================= */
+
+#footer{
+    background: var(--extra-color-5)!important;
+}
+
+.footer__item{
+    text-decoration: none;
+    color: var(--secondary-color);
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.footer__section2 div:nth-child(4) a{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__section2 div a:hover{
+    text-decoration: underline;
+}
+
+.icons-container-outer{
+    padding-top: 60px;
+    padding-bottom: 40px;
+    display: flex;
+}
+
+.icons-container-inner{
+    display: flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.icons-container__unit{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+}
+
+.icons-container__unit a{
+    display: flex;
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-decoration: none;
+    border-radius: 50%;
+    color: var(--secondary-color);
+}
+
+.icons-container__unit a:hover{
+    font-size: 27px;
+    background: var(--tertiary-color);
+}
+
+.text-rights__message{
+    color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/*========================== Fin Estilos Footer ================= */
+
+
+/*========================== Inicio Estilos Formulario ================= */
+
+.form-container{
+    display: grid;
+    width: 60%;
+    background: var(--tertiary-color);
+    border: 2px solid var(--secondary-color);
+    border-radius: 15px;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(5, auto);
+    padding: 20px 30px;
+    row-gap: 20px;
+    position: absolute;
+    top: 0.5%;
+    left: 20%;
+    z-index: 120;
+    box-shadow: 0px 2px 10px 5px var(--secondary-color);
+}
+
+.form__title{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    color: var(--main-color);
+}
+
+.form__options{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;  
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.form__options a{
+    text-decoration: none;
+    text-align: center;
+    color: var(--extra-color-5);
+    font-weight: 600;
+    padding: 8px 0px;
+    font-size: 16px;
+}
+
+.form__options a:nth-child(1){
+    border-left: 1px solid var(--extra-color-7);
+    border-top: 1px solid var(--extra-color-7);
+    border-right: 1px solid var(--extra-color-7);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+}
+
+.form__options a:nth-child(2){
+    border-bottom: 1px solid var(--extra-color-7);
+}
+
+
+.form__information{
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+    padding: 0 15px;
+}
+
+.form__information p{
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.form__information p span{
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+form{
+    width: auto;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(10, auto);
+    row-gap: 20px;
+    padding: 0 15px;
+}
+
+.form__option{
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    justify-self: center;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+#nombre{
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: grid!important;
+}
+
+#apellido{
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+#correo{
+    grid-column: 1 / 3;
+    grid-row: 3 / 4;
+
+}
+#password{
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+}
+#telefono{
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+}
+
+.inputName{
+    width: 100%;;
+}
+
+.form__document{
+    grid-column: 1 / 3;
+    grid-row: 6 / 7;
+}
+
+
+.minibox{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    column-gap: 10px;
+}
+
+.form__country{
+    grid-column: 1 / 3;
+    grid-row: 7 / 8;
+}
+
+.form__sex{
+    grid-column: 1 / 3;
+    grid-row: 8 / 9;
+    display: grid;
+}
+
+.form__terms{
+    grid-column: 1 / 3;
+    grid-row: 9 / 10;
+    display: grid;
+    row-gap: 5px;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+}
+
+.form__terms div:nth-child(1){
+    grid-column: 1 / 2;
+    grid-row: 1 / 2
+}
+
+.form__terms div:nth-child(2){
+    grid-column: 1 / 2;
+    grid-row: 2 / 3
+}
+
+.form__terms div:nth-child(3){
+    grid-column: 1 / 2;
+    grid-row: 3 / 4
+}
+
+.form__terms div{
+    display: grid;
+    grid-template-columns: 3% 97%;
+    column-gap: 10px;
+}
+
+.form__terms label{
+    font-size: 16px;
+    color: var(--secondary-color);
+    line-height: 20px;
+}
+
+.btn-form{
+    grid-column: 1 / 3;
+    grid-row: 10 / 11;
+}
+
+select{
+    color: var(--secondary-color);
+    font-size: 16px;
+}
+
+input[type="text"]{
+    width: 100%!important;
+}
+
+input[type="text"], input[type="password"], [type="correo"], select{
+    padding: 8px 12px;
+    border-radius: 7px;
+    border: 1px solid var(--extra-color-7);
+    background-color: var(--extra-color-8);
+    outline: 0;
+    width: 100%!important;
+
+}
+
+input[type="text"], input[type="password"], [type="correo"]{
+    color: var(--extra-color-5);
+    font-size: 16px;
+    caret-color: var(--secondary-color); /*Propiedad para cambiar el color del cursor*/
+}
+
+input[type="text"]:focus, input[type="password"]:focus, select:focus, input[type="checkbox"]:focus{
+    outline: 4px solid var(--extra-color-9);
+    border: 1px solid var(--secondary-color);
+}
+
+input[type="checkbox"]{
+    width: 18px;
+    height: 18px;
+    accent-color: var(--secondary-color); /*Propiedad para cambiar el color del checkbox al ser marcado*/
+}
+
+/* estilos del atributo place holder*/
+
+input[type="text"]::placeholder,  input[type="password"]::placeholder{
+	color: var(--secondary-color);
+	font-size: 16px;
+}
+
+.btn-form{
+    width: 80%;
+    justify-self: center;
+    margin-top: 25px;
+}
+
+.form__option a{
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form__option a:hover{
+    text-decoration: underline;
+}
+
+.icon-closed{
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    position:absolute;
+    top:2%;
+    right: 4%;
+    cursor: pointer;
+}
+
+/*========================== Fin Estilos Formulario ================= */
+
+
+/*========================== Inicio Media queries ================= */
+
+@media screen and (max-width: 992px){
+    .form-container{
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        left: 15%;
+    }
+
+    .form__option{
+        grid-column: 1 / 2;
+    }
+    
+    form{
+        grid-column: 1 / 2;
+        display: flex;
+        flex-direction: column;
+    }
+    #nombre, #apellido, #correo, #password, #telefono, .form__document, .form__country, .form__sex, .form__terms{
+        grid-column: 1 / 2;
+        width: 100%;
+    }
+    
+    .form__terms{
+        grid-template-columns: repeat(1, auto);
+    }
+
+    .btn-form{
+        grid-column: 1 / 2;
+        width: 90%;
+        align-self: center;
+    }
+
+    .minibox{
+        display: flex;
+    }
+
+    #documento_tipo, #pais, #ciudad{
+        width: 50%;
+    }
+
+    .form__option{
+        text-align: center;
+    }
+
+    .card-info{
+        justify-content: center!important;
+        column-gap: 10px!important;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .form-container{
+        width: 90%;
+        left: 5%;
+        padding:20px 15px
+    }
+    .form__title{
+        font-size: 28px;
+    }
+}
+
+@media screen and (max-width: 416px){
+    .card-info{
+        position: relative;
+        justify-content: start!important;
+
+    }
+
+    .card-info__country-container{
+        position: absolute;
+        right: 10px;
+        top:calc(50% - 20px)!important;
+    }
+    .card-info__name{
+        text-align:initial!important;
+        font-size: 18px!important;
+    }
+    .card-info__dorsal{
+        font-size: 30px!important;
+    }
+    .card-info{
+        column-gap: 15px!important;
+    }
+    .card-info__cont {
+        align-items: start!important;
+    }
+    .card-info__year, .card-info__age{
+        font-size: 12px!important;
+    }
+    .card-info__country-container{
+        width: 30px!important;
+        height: 30px!important;
+    }
+    .card-info__country{
+        width: 100%!important;
+    }
+}
+
+@media screen and (max-width: 380px){
+
+    .card-info{
+        column-gap: 10px!important;
+    }
+}
+
+.inactive{
+    display: none;
+}
+
+/*========================== Fin Media queries ================= */
+
+/*========================== Inicio Botón Flotante ================= */
+
+.enlace-btn-flotante{
+    background: var(--extra-color-3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    border-radius: 40px;
+    text-decoration: none;
+    padding: 10px 30px;
+    color: var(--extra-color-5);
+    outline: 4px solid var(--extra-color-5);
+    column-gap: 8px;
+    font-weight: 900;
+    position: fixed;
+    right: 1%;
+    bottom: 10%;
+    box-shadow: 0px 0px 10px 5px var(--extra-color-10);
+
+}
+
+.enlace-btn-flotante p{
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    margin: 0;
+}
+
+.enlace-btn-flotante i{
+    font-size: 1.5rem;
+}
+
+.enlace-btn-flotante:hover{
+    color: var(--secondary-color) ;
+    outline: 4px solid var(--secondary-color);
+    box-shadow: 0px 0px 10px 5px var(--secondary-color);
+}
+
+
+/*========================== Fin Botón Flotante ================= */
+
+
+/*========================== Inicio Estilos para nueva sección de la EP02 - Jugadores ================= */
+
+.outer-image{
+    padding: 10px;
+    border-radius: 10px;
+    border: 4px solid var(--secondary-color);
+
+}
+
+.inner-image{
+    border-radius: 5px;
+    border: 0 !important;
+}
+
+.card-picture{
+    display: grid;
+    position: relative;
+    margin-bottom: 5px;
+    border: 4px solid var(--main-color);
+}
+
+.card-picture__logo{
+    position: absolute;
+}
+
+.card-info{
+    display: flex;
+    padding: 20px 12px !important;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--extra-color-11);
+    column-gap: 5px;
+}
+
+.card-info__cont{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+
+.card-info__personal{
+    display: flex;
+    align-items: center;
+    color: var(--extra-color-3);
+    font-size: 10px;
+    line-height: 10px;
+    column-gap: 10px;
+    justify-content: center;
+}
+
+.card-info__dorsal{
+    font-size: 35px;
+    font-weight: 900;
+    color: var(--extra-color-12);
+    margin: 0;
+}
+
+.card-info__name{
+    color: var(--extra-color-3);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+    line-height: 25px;
+    /*padding: 0px 8px;*/
+}
+
+.card-info__year{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+
+}
+
+.card-info__age{
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+    column-gap: 4px;
+    color: var(--extra-color-8);
+}
+
+.card-info__age p{
+    margin: 0;
+}
+
+.card-info__country-container{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    outline: 2px solid var(--extra-color-8);
+    display: flex;
+    border: 1px solid var(--main-color);
+}
+
+.card-info__dot{
+    margin: 0;
+    font-size: 20px;
+}
+
+.border-type-1{
+    border-top: 3px solid var(--main-color);
+}
+
+.border-type-2{
+    border-top: 3px solid var(--secondary-color);
+}
+
+.players--position__title{
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.players--position__background{
+    display: flex;
+    justify-content: start;
+    padding: 10px 0px 10px 20px;  
+    border-bottom-right-radius: 30px;
+}
+
+.mode1{
+    background-color: var(--main-color);
+}
+
+.mode2{
+    background-color: var(--secondary-color);
+}
+
+.text-color1{
+    color: var(--extra-color-8);
+
+}
+
+.text-color2{
+    color: var(--extra-color-8);
+}
+
+/*========================== Fin Estilos para nueva sección de la EP02 - Jugadores ================= */

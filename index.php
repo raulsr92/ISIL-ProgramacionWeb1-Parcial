@@ -1,0 +1,753 @@
+<?php
+try {
+    $dbh = new PDO('mysql:host=localhost;dbname=tiendablaquiazul', 'root', '');
+} catch (PDOException $e) {
+    echo "!Error!: ". $e->getMessage() ."<br/>";
+    die();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parcial - Raul Sanchez Rodriguez</title>
+    <!--Inicio Instalador Bootstrap CSS-->
+
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.css">
+
+    <!--Fin Instalador Bootstrap CSS-->
+
+    <link rel="stylesheet" href="./css/styless.css" />
+    <!--Mi archivo CSS-->
+  </head>
+
+  <body id="body">
+    <header class="header">
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid pe-3 ps-lg-0 ps-0">
+          <a class="navbar-brand enlace-icon-club" href="#">
+            <img src="./img/alianza-lima-logo.png" alt="" style="width: 40px" />
+            <span>Alianza </span>
+            <span>Lima</span>
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0 ps-3 text-center text-lg-start navbar__items-container"
+            >
+              <li class="nav-item">
+                <a class="nav-link navbar__item" aria-current="page" href="#">CAMISETAS</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" href="#">SOUVENIRS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" href="#">BANDERAS</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar__item" href="#">TODOS</a>
+              </li>
+              <!--<li class="nav-item">
+                    <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                  </li>-->
+            </ul>
+
+            <div
+              class="navbar__icons-container p-2 p-lg-0 justify-content-center"
+            >
+              <a href="">
+                <img
+                  src="./img/logo-dark-apueta-total-vertical.png"
+                  alt=""
+                  style="width: 90px"
+                />
+              </a>
+              <div>
+                <a href="#" class="enlace-icon-header">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+                <a href="#" class="enlace-icon-header" id="cartShopping">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+                <a href="#" class="enlace-icon-header" id="userEnter">
+                  <i class="fa-solid fa-user"></i>
+                </a>
+              </div>
+            </div>
+
+            <!--
+                <form class="d-flex" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main backgroundWhite">
+      <section class="carousel--container">
+        <div
+          id="carouselExampleAutoplaying"
+          class="carousel slide"
+          data-bs-ride="carousel"
+          data-bs-pause="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="./img/banner-AL-1.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./img/banner_AL-2.png"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+            <div class="carousel-item">
+              <img
+                src="./img/banner-AL-3.jpg"
+                class="d-block w-100"
+                alt="..."
+              />
+            </div>
+          </div>
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="prev"
+          >
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#carouselExampleAutoplaying"
+            data-bs-slide="next"
+          >
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="container mt-5 mb-4">
+        <div class="row mb-4">
+          <div class="col">
+            <h1 class="text-center mainTitle">PRODUCTOS DESTACADOS</h1>
+            <h2 class="text-center">TIENDA BLANQUIAZUL</h2>
+          </div>
+        </div>
+
+        <div class="row justify-content-center" id="cards-container">
+          <!--
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="card card-container">
+              <a href="#" class="enlace-img-products"><img src="./img/Producto1.jpg" class="card-img-top" alt="...">
+              </a>
+              <div class="card-body">
+                <h5 class="card-title p-cards text-center">Camiseta Away Mujer 2024</h5>
+                <p class="p-cards p-cards__intimo text-center mb-2">S/ 229.90 <span class="badge text-bg-danger">Precio íntimo</span></p>
+                <p class="p-cards text-center mb-3">S/ 249.90</p>
+                <a href="#" class="btn btn-primary btn-main w-100">¡Lo quiero!</a>
+              </div>
+            </div>
+          </div>
+           -->
+        </div>
+      </section>
+
+      <section class="container-fluid publicity-section mt-5">
+        <div class="row">
+          <div class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0">
+            <h1 class="title-publicity ">
+              CAMISETA <span class="spanEdited">OFICIAL</span>
+            </h1>
+            <p class="parrafo-publicity">Cómprale al club y personaliza nuestra piel blanquiazul.</p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+          <div class="col-12 col-lg-6 publicity-section__right p-0">
+            <img src="./img/img-big-1.jpg" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid publicity-section mt-5 mt-lg-0">
+        <div class="row">
+          <div
+            class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0 ps-lg-4 pe-lg-4 d-flex d-lg-none"
+          >
+            <h1 class="title-publicity">
+              CAMISETA <span class="spanEdited">VISITANTE</span>
+            </h1>
+            <p class="parrafo-publicity">
+              Compra tu camiseta junto a muchos otros productos y recíbelo en un
+              solo envío.
+            </p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+          <div class="col-12 col-lg-6 publicity-section__right p-0">
+            <img src="./img/img-big-2.jpg" alt="" />
+          </div>
+          <div
+            class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0 ps-lg-4 pe-lg-4 d-none d-lg-flex"
+          >
+            <h1 class="title-publicity">
+              CAMISETA <span class="spanEdited">VISITANTE</span>
+            </h1>
+            <p class="parrafo-publicity">
+              Compra tu camiseta junto a muchos otros productos y recíbelo en un
+              solo envío.
+            </p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid publicity-section mt-5 mt-lg-0">
+        <div class="row">
+          <div class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0">
+            <h1 class="title-publicity">
+              SOUVENIRS <span class="spanEdited">OFICIALES</span>
+            </h1>
+            <p class="parrafo-publicity">Todos los productos oficiales del club en un solo lugar.</p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+          <div class="col-12 col-lg-6 publicity-section__right p-0">
+            <img src="./img/img-big-3.png" alt="" />
+          </div>
+        </div>
+      </section>
+
+      <section class="container-fluid publicity-section mt-5 mt-lg-0 mb-5">
+        <div class="row">
+          <div
+            class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0 ps-lg-4 pe-lg-4 d-flex d-lg-none"
+          >
+            <h1 class="title-publicity">
+              BANDERAS <span class="spanEdited">OFICIALES</span>
+            </h1>
+            <p class="parrafo-publicity">Demuestra el orgullo de ser parte del equipo del pueblo.</p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+          <div class="col-12 col-lg-6 publicity-section__right p-0">
+            <img src="./img/img-big-4.jpg" alt="" />
+          </div>
+          <div
+            class="col-12 col-lg-6 publicity-section__left pb-3 pb-lg-0 ps-lg-4 pe-lg-4 d-none d-lg-flex"
+          >
+            <h1 class="title-publicity">
+              BANDERAS <span class="spanEdited">OFICIALES</span>
+            </h1>
+            <p class="parrafo-publicity">Demuestra el orgullo de ser parte del equipo del pueblo.</p>
+            <a href="#" class="btn btn-primary btn-main" id="btnComprar"
+              >Comprar ahora</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section class="form-container inactive">
+        <i class="fa-solid fa-circle-xmark icon-closed"></i>
+        <h1 class="form__title">REGÍSTRATE</h1>
+        <div class="form__options">
+          <a href="#">Regístrate</a>
+          <a href="#">Iniciar Sesión</a>
+        </div>
+        <div class="form__information">
+          <h2>Completa tus datos</h2>
+          <p>
+            <span>Recuerda:</span> La contraseña debe tener letras mayúsculas y
+            minúsculas más un número como mínimo para ser aceptada(min. 6
+            caracteres).
+          </p>
+        </div>
+
+        <form  class="needs-validation" action="registroGuardar.php" method="post" novalidate>
+            <div id="nombre">
+                <input class="inputName" type="text" name="nombre"  value="" placeholder="Nombres" required />
+                <div class="valid-feedback">
+                    !Validación exitosa!.
+                </div>
+                <div class="invalid-feedback">
+                    !El campo de nombre está vacío!
+                </div>
+            </div>
+
+            <div id="apellido">
+                <input type="text" name="apellido"  value="" placeholder="Apellidos" required/>
+                <div class="valid-feedback">
+                    !Validación exitosa!.
+                </div>
+                <div class="invalid-feedback">
+                    !El campo de Apellidos está vacío!
+                </div>
+            </div>
+
+            <div id="correo">
+                <input type="correo" name="correo"  value="" placeholder="Correo" required/>
+                <div class="valid-feedback">
+                    !Validación exitosa!.
+                </div>
+                <div class="invalid-feedback">
+                    !El campo de correo está vacío!
+                </div>
+            </div>
+
+            <div id="password">
+                <input type="password" name="password"  value="" placeholder="Contraseña" required/>
+                <div class="valid-feedback">
+                    !Validación exitosa!.
+                </div>
+                <div class="invalid-feedback">
+                    !Ingrese una contraseña!
+                </div>
+            </div>
+
+            <div id="telefono">
+                <input type="text" name="telefono"  value="" placeholder="Teléfono" required />
+                <div class="valid-feedback">
+                    !Validación exitosa!.
+                </div>
+                <div class="invalid-feedback">
+                    !Ingrese un número de celular para continuar!
+                </div>
+            </div>
+            
+            <div class="form__document minibox">
+                <select name="documento_tipo" id="documento_tipo">
+                     <option value="#" selected disabled>Selecciona tipo de documento</option>
+                     <option value="DNI">DNI</option>
+                     <option value="CE">Carnet Extranjeria</option>
+                     <option value="PASAPORTE">Pasaporte</option>
+                </select>
+                <input type="text" name="documento_numero" id="documento_tipo" value="" required />
+            </div>
+
+            <div class="form__country minibox">
+                <select name="pais" id="pais">
+                <option value="Perú" selected>Perú</option>
+                <option value="Venezuela">Venezuela</option>
+                <option value="Ecuador">Ecuador</option>
+                <option value="Colombia">Colombia</option>
+                <option value="Chile">Chile</option>
+                </select>
+
+                <select name="ciudad" id="ciudad">
+                <option value="01" selected>Lima</option>
+                <option value="02">Arequipa</option>
+                <option value="03">Moquegua</option>
+                <option value="04">Huancayo</option>
+                <option value="05">Piura</option>
+                </select>
+            </div>
+            
+          <div class="form__sex">
+            <select name="genero" id="genero">
+              <option value="01" selected>Selecciona tu genero</option>
+              <option value="02">Masculino</option>
+              <option value="03">Femenino</option>
+            </select>
+          </div>
+
+          <div class="form__terms">
+            <div>
+              <input type="checkbox" />
+              <label for="">He leído y acepto los términos y Condiciones .</label>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label for=""
+                >¿Usted ha leído y acepta los términos y condiciones para el
+                tratamiento de sus datos personales contenidos en la Política de
+                Privacidad Web ?.</label>
+            </div>
+            <div>
+              <input type="checkbox" />
+              <label for=""
+                >¿Usted desea qué CLUB ALIANZA LIMA envíe información y/o
+                promociones que ofrece?.</label
+              >
+            </div>
+          </div>
+
+          <button type="submit" class="btn-form suscribe-button btn-primary btn">
+            Suscríbete
+          </button>
+        </form>
+
+        <p class="form__option mb-2">
+          Ya tienes una cuenta. <a href="#">Inicia sesión aquí</a>
+        </p>
+      </section>
+
+      <section class="container players mb-5">
+        <div class="row mb-4">
+          <div class="col">
+            <h1 class="text-center mainTitle">PLANTEL DE JUGADORES</h1>
+            <h2 class="text-center">EQUIPO MASCULINO PRIMERA DIVISIÓN</h2>
+          </div>
+        </div>
+
+        <div class="row players--position mb-4 mx-1 mx-md-0 border-type-1">
+          <div class="col-8 col-md-4 players--position__background mode1">
+            <h3 class="players--position__title text-color1">ARQUEROS</h3>
+          </div>         
+        </div>
+
+        <div class="row justify-content-center justify-content-md-start" id="arqueros--container">
+
+          <!--
+          <div class="col-9 col-sm-8 col-md-6 col-lg-4 col-xxl-3 p-2">
+            <div class="outer-image">
+              <div class="card inner-image">
+                <div class="card-picture">
+                  <img src="./img/logo-dorado.jpg" alt="" style="width: 60px;" class="card-picture__logo">
+                  <a href="#">
+                    <img src="./img/campos.png" class="card-img-top" alt="...">
+                  </a>
+                </div>
+
+                <div class="card-body card-info">
+                  <p class="card-text card-info__dorsal">12</p>
+                  <div class="card-info__cont"> 
+                    <p class="card-title card-info__name">Angelo Campos</p>
+
+                    <div class="card-info__personal">
+                      <p class="card-info__year">27/04/2024</p>
+                      <p class="card-info__dot">| </p>
+                      <div class="card-info__age">
+                        <p>31</p><span>años</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-info__country-container">
+                    <img class="card-info__country" src="./img/peru.png" alt="" style="width: 40px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </div>
+
+
+        <div class="row players--position mt-4 mb-4 mx-1 mx-md-0 border-type-1">
+          <div class="col-8 col-md-4 players--position__background mode1">
+            <h3 class="players--position__title text-color1">DEFENSAS</h3>
+          </div>         
+        </div>
+
+        <div class="row justify-content-center justify-content-md-start" id="defensas--container">
+          <!--
+          <div class="col-9 col-sm-8 col-md-6 col-lg-4 col-xxl-3 p-2">
+            <div class="outer-image">
+              <div class="card inner-image">
+                <div class="card-picture">
+                  <img src="./img/logo-dorado.jpg" alt="" style="width: 60px;" class="card-picture__logo">
+                  <a href="#">
+                    <img src="./img/campos.png" class="card-img-top" alt="...">
+                  </a>
+                </div>
+
+                <div class="card-body card-info">
+                  <p class="card-text card-info__dorsal">12</p>
+                  <div class="card-info__cont"> 
+                    <p class="card-title card-info__name">Angelo Campos</p>
+
+                    <div class="card-info__personal">
+                      <p class="card-info__year">27/04/2024</p>
+                      <p class="card-info__dot">| </p>
+                      <div class="card-info__age">
+                        <p>31</p><span>años</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-info__country-container">
+                    <img class="card-info__country" src="./img/peru.png" alt="" style="width: 40px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </div>
+       
+        <div class="row players--position mt-4 mb-4 mx-1 mx-md-0 border-type-1">
+          <div class="col-8 col-md-4 players--position__background mode1">
+            <h3 class="players--position__title text-color1">VOLANTES</h3>
+          </div>         
+        </div>
+
+        <div class="row justify-content-center justify-content-md-start" id="volantes--container">
+          <!--
+          <div class="col-9 col-sm-8 col-md-6 col-lg-4 col-xxl-3 p-2">
+            <div class="outer-image">
+              <div class="card inner-image">
+                <div class="card-picture">
+                  <img src="./img/logo-dorado.jpg" alt="" style="width: 60px;" class="card-picture__logo">
+                  <a href="#">
+                    <img src="./img/campos.png" class="card-img-top" alt="...">
+                  </a>
+                </div>
+
+                <div class="card-body card-info">
+                  <p class="card-text card-info__dorsal">12</p>
+                  <div class="card-info__cont"> 
+                    <p class="card-title card-info__name">Angelo Campos</p>
+
+                    <div class="card-info__personal">
+                      <p class="card-info__year">27/04/2024</p>
+                      <p class="card-info__dot">| </p>
+                      <div class="card-info__age">
+                        <p>31</p><span>años</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-info__country-container">
+                    <img class="card-info__country" src="./img/peru.png" alt="" style="width: 40px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </div>
+
+        <div class="row players--position mt-4 mb-4 mx-1 mx-md-0 border-type-1">
+          <div class="col-8 col-md-4 players--position__background mode1">
+            <h3 class="players--position__title text-color1">DELANTEROS</h3>
+          </div>         
+        </div>
+
+        <div class="row justify-content-center justify-content-md-start" id="delanteros--container">
+          <!--
+          <div class="col-9 col-sm-8 col-md-6 col-lg-4 col-xxl-3 p-2">
+            <div class="outer-image">
+              <div class="card inner-image">
+                <div class="card-picture">
+                  <img src="./img/logo-dorado.jpg" alt="" style="width: 60px;" class="card-picture__logo">
+                  <a href="#">
+                    <img src="./img/campos.png" class="card-img-top" alt="...">
+                  </a>
+                </div>
+
+                <div class="card-body card-info">
+                  <p class="card-text card-info__dorsal">12</p>
+                  <div class="card-info__cont"> 
+                    <p class="card-title card-info__name">Angelo Campos</p>
+
+                    <div class="card-info__personal">
+                      <p class="card-info__year">27/04/2024</p>
+                      <p class="card-info__dot">| </p>
+                      <div class="card-info__age">
+                        <p>31</p><span>años</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-info__country-container">
+                    <img class="card-info__country" src="./img/peru.png" alt="" style="width: 40px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </div>
+
+        <div class="row players--position mt-4 mb-4 mx-1 mx-md-0 border-type-1">
+          <div class="col-8 col-md-4 players--position__background mode1">
+            <h3 class="players--position__title text-color1">CUERPO TÉCNICO</h3>
+          </div>         
+        </div>
+
+        <div class="row justify-content-center justify-content-md-start" id="comando--container">
+          <!--
+          <div class="col-9 col-sm-8 col-md-6 col-lg-4 col-xxl-3 p-2">
+            <div class="outer-image">
+              <div class="card inner-image">
+                <div class="card-picture">
+                  <img src="./img/logo-dorado.jpg" alt="" style="width: 60px;" class="card-picture__logo">
+                  <a href="#">
+                    <img src="./img/campos.png" class="card-img-top" alt="...">
+                  </a>
+                </div>
+
+                <div class="card-body card-info">
+                  <p class="card-text card-info__dorsal">12</p>
+                  <div class="card-info__cont"> 
+                    <p class="card-title card-info__name">Angelo Campos</p>
+
+                    <div class="card-info__personal">
+                      <p class="card-info__year">27/04/2024</p>
+                      <p class="card-info__dot">| </p>
+                      <div class="card-info__age">
+                        <p>31</p><span>años</span>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="card-info__country-container">
+                    <img class="card-info__country" src="./img/peru.png" alt="" style="width: 40px;">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        -->
+        </div>
+
+      </section>
+    </main>
+
+    <footer id="footer" class="pb-4 pt-5 bg-black">
+      <div class="container">
+        <div class="footer__section1 row justify-content-center pb-4">
+          <div class="col-2 d-flex justify-content-center">
+            <img src="./img/AL-logo-dorado.png" alt="" style="width: 150px" />
+          </div>
+        </div>
+        <div class="footer__section2 row text-center justify-content-center">
+          <div class="col-12 col-lg pt-2 pt-lg-0">
+            <a
+              class="footer__item"
+              href="https://s3.us-west-2.amazonaws.com/joinnus.com/files_alianzalima/T%C3%A9rminos_y_condiciones_del_servicio.pdf"
+              target="_blank"
+              >Términos y Condiciones</a
+            >
+          </div>
+          <div class="col-12 col-lg pt-2 pt-lg-0">
+            <a
+              class="footer__item"
+              href="https://s3-us-west-2.amazonaws.com/joinnus.com/files/Politica+de+Privacidad+Joinnus+-+cookies+v24.02.pdf"
+              target="_blank"
+              >Política de Privacidad</a
+            >
+          </div>
+          <div class="col-12 col-lg pt-2 pt-lg-0">
+            <a
+              class="footer__item"
+              href="https://s3-us-west-2.amazonaws.com/joinnus.com/files/Politica+de+cookies+v24.02.pdf"
+              target="_blank"
+              >Política de Cookies</a
+            >
+          </div>
+          <div class="col-12 col-lg pt-2 pt-lg-0">
+            <a
+              class="footer__item"
+              href="https://reclamos.clubalianzalima.com.pe/"
+              target="_blank"
+              ><i class="fa-solid fa-book-open"></i>Libro de Reclamaciones</a
+            >
+          </div>
+        </div>
+
+        <div class="footer__section3 row icons-container-outer">
+          <div class="icons-container-inner">
+            <div class="icons-container__unit">
+              <a href="https://www.facebook.com/ClubAlianzaLima" target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </div>
+            <div class="icons-container__unit">
+              <a href="https://twitter.com/ClubALoficial" target="_blank"
+                ><i class="fa-brands fa-x-twitter"></i
+              ></a>
+            </div>
+            <div class="icons-container__unit">
+              <a
+                href="https://www.youtube.com/channel/UCiOzKO4dGz2bdXTc7rpOdNg"
+                target="_blank"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+            </div>
+            <div class="icons-container__unit">
+              <a href="https://www.instagram.com/alianzalima/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+            <!--
+              <div class="icons-container__unit">
+                <a href="#" id="spotify"><i class="fa-brands fa-spotify"></i></a>
+              </div>
+              <div class="icons-container__unit">
+                <a href="#" ><i class="fa-solid fa-music "></i></a>
+              </div>-->
+          </div>
+        </div>
+
+        <div class="footer__section4 row">
+          <div class="col text-center text-rights">
+            <p class="text-rights__message">
+              Copyright © Joinnus 2024 -Todos los derechos reservados
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <a href="#" class="enlace-btn-flotante">
+      <i class="fa-solid fa-palette"></i>
+      <p>Cambiar apariencia</p>
+    </a>
+
+    <!--Inicio Instalador Bootstrap JS-->
+
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+    <!--Fin Instalador Bootstrap JS-->
+
+    <!--Inicio íconos fontawesome-->
+    <script
+      src="https://kit.fontawesome.com/33e3caf9b6.js"
+      crossorigin="anonymous"
+    ></script>
+    <!--Fin íconos fontawesome-->
+
+    <!--Inicio Instalador sweetalert-->
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!--Fin Instalador sweetalert-->
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
